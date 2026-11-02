@@ -23,6 +23,12 @@
 4. 本文件；
 5. {AUTHORITATIVE_DOCS_AND_CODE}。
 
+本文件及启动Prompt须补齐适用用户级规则、工作区/目标目录AGENTS或真实名称、技能、工程规范、任务编号规范、任务登记及Git规范的实际路径和读取顺序。逐项标记已实际读取／尚待读取／未核实及原因；接续重新读取现行原文件，不倒记初始化完成。个人路径与实际会话资料只放Git忽略的本地目录，工程要求和事实归共享工程文档。
+
+| 顺序 | 真实路径 | 职责及适用范围 | 实际读取状态 | 授权或冲突结论 |
+|---|---|---|---|---|
+| {N} | {PATH} | {ROLE_SCOPE} | {READ_STATUS} | {CONCLUSION} |
+
 ## 2. Git 与工作区快照
 
 ```text
@@ -134,6 +140,12 @@ HEAD：{HEAD}
 {THIS_SWITCH_FILE}
 {AUTHORITATIVE_DOCS_AND_CODE}
 
+{USER_LEVEL_RULES_ACTUAL_PATHS}
+{WORKSPACE_AND_TARGET_RULES_ACTUAL_PATHS}
+{APPLICABLE_SKILLS_AND_ENGINEERING_TASK_GIT_RULES}
+
+以上占位符须在本地使用时展开为真实路径和顺序，并实际核对读取状态。规则输入与运行进程、活动存档、采集帧及样本分别记账。
+
 不要依赖旧聊天记录。首先只读执行：
 git status -sb
 git log -5 --oneline --decorate
@@ -162,4 +174,8 @@ git remote -v
 - [ ] 下一步只有一个清晰入口，且审核门禁明确；
 - [ ] 开始 Prompt 可脱离旧聊天独立使用；
 - [ ] 任务 Session Init 的 Session 名称登记表已同步。
+- [ ] 项目唯一Session README按线性编号排列，前后会话及预留状态准确，未因任务变化重编号；
+- [ ] 初始化输入的实际路径、顺序、读取状态、授权与冲突结论在正文及Prompt中齐全；
+- [ ] 文档维护矩阵逐项给出已更新／审查后无需修改／待更新及依据；结构检查未冒充语义审查；
+- [ ] 实际交接与个人规则已确认Git忽略且未被跟踪，不维护多套实际会话版本。
 

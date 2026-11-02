@@ -1,6 +1,6 @@
 # {TASK_NAME} 工作流与开始 Prompt
 
-> 建议 Session 名称：`{TASK_NAME} - Session 01`  
+> 建议Session名称：`{PROJECT_NAME}｜{SESSION_ID}｜{TASK_ID} {TASK_NAME}`
 > 任务编号：`{TASK_ID}`  
 > 项目：`{PROJECT_ROOT}`  
 > 当前状态：`Draft`  
@@ -15,7 +15,7 @@
 3. 若存在，最新 `{PROJECT_ROOT}\.codex\Session Switch\...md`；
 4. 下方列出的权威项目文档和实现证据。
 
-冲突时采用更严格规则，不依赖此前聊天记录。
+先按指令优先级、适用范围和现行版本核对冲突，不用“更严格”代替判断。初始化还须实际读取适用的用户级规则、工作区/目标目录规则、技能、工程规范、任务编号规范、任务登记与Git规范；真实路径及读取状态填入本地交接，不依赖旧聊天或自动注入。
 
 ## 2. 任务登记
 
@@ -120,7 +120,9 @@
 
 | 编号 | Session名称 | 状态 | Switch文档 |
 |---|---|---|---|
-| Session 01 | `{TASK_NAME} - Session 01` | Active | 无 |
+| {SESSION_ID} | `{PROJECT_NAME}｜{SESSION_ID}｜{TASK_ID} {TASK_NAME}` | {真实状态} | {交接路径或尚未生成} |
+
+Session从项目总索引的上一编号接续，不能按每项任务重置为01。完整前后关系只在项目唯一的本地Session README登记，本表仅记录本任务关联。
 
 ## 9. 可直接复制的新 Session 开始 Prompt
 
@@ -138,6 +140,8 @@
 2. {THIS_FILE_ABSOLUTE_PATH}
 3. {LATEST_SESSION_SWITCH_OR_NONE}
 4. 本文件列出的README、权威规则、需求、架构、设计、测试与维护文档。
+
+补充本机实际适用的用户级规则、工作区及目标目录AGENTS或其他真实名称规则、技能、任务编号/登记及Git规范路径，并按顺序实际读取；记录已读取、尚待读取和未核实状态。若本Prompt用于共享模板，保留占位符；实际个人路径仅填入Git忽略的本地副本。
 
 不要依赖此前聊天记录。首先只读执行：
 git status -sb
@@ -161,13 +165,13 @@ git remote -v
 未经明确授权，不要修改生产代码、创建Git提交、推送、合并、发布、部署或改写历史。TODO不是开发授权；“继续”只推进下一明确批次。
 ```
 
-## 10. 针对 ForumPark 的首次替换示例
+## 10. 首次替换示例（占位示意）
 
 ```text
-{PROJECT_NAME} = 论坛贴吧
-{PROJECT_ROOT} = D:\Projects\BZKJ\_ForumPark
+{PROJECT_NAME} = 示例项目
+{PROJECT_ROOT} = {实际项目绝对路径，仅填入本地任务文件}
 {TASK_NAME} = 项目初始化与架构基线
-{TASK_ID} = FP-0001
+{TASK_ID} = {按该项目已审核编号规则登记}
 ```
 
 首次使用仍需先调查仓库的真实技术栈、入口、分支和规范，不在模板中预设前后端框架、数据库或部署平台。

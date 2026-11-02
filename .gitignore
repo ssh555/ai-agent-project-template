@@ -1,0 +1,14 @@
+# Actual personal agent/session state; reusable templates remain tracked.
+.codex/
+.agents/
+.codex-tmp/
+.local/
+本地成果资料/
+*.nettrace
+*.etl
+*.etlx
+*.gcdump
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
