@@ -27,6 +27,11 @@
 目标版本或里程碑：{MILESTONE}
 当前阶段：{CURRENT_STAGE}
 当前审核门禁：{REVIEW_GATE}
+任务场景：{现场实施/联调验收/产品重构/功能开发/维护/其他}
+专项规则入口及适用边界：{ACTUAL_RULE_PATHS_AND_SCOPE}
+应分离的独立任务：{SEPARATE_TASKS_OR_NONE}
+混用例外授权：{未授权，或负责人明确授权原文/范围/来源}
+原任务暂停与返回点：{RETURN_POINT_OR_NONE}
 ```
 
 ## 3. 当前唯一范围
@@ -158,6 +163,7 @@ git remote -v
 5. 完成当前阶段“{CURRENT_STAGE}”的输出，并停在“{REVIEW_GATE}”等待审核。
 
 当前唯一范围：{IN_SCOPE_SUMMARY}
+独立任务默认另开会话；如请求将导致混用，先提醒并说明任务、范围、规则、授权边界和返回点，取得负责人明确授权后才执行混用部分。授权不得扩大，“继续”不能代替混用授权。
 明确非目标：{OUT_OF_SCOPE_SUMMARY}
 已完成且不得重做：{COMPLETED_BASELINE}
 需要保护的差异：{DIRTY_WORKTREE_OWNERSHIP}
